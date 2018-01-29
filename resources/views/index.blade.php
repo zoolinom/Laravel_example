@@ -11,6 +11,6 @@
 
             <h2><a href="/records">Records</a></h2>
         </div>
-        
+
     </div>
 @endsection
