@@ -21,6 +21,8 @@ Route::get('/doctors', 'DoctorsController@index');
 
 Route::get('/patients/{patient}', 'PatientController@show');
 
+Route::get('/doctors/{doctor}', 'DoctorsController@show');
+
 /*
  * TODO add routes, controllers and migrations for Doctors and Records
  */

@@ -13,4 +13,9 @@ class DoctorsController extends Controller
 
         return view('doctors.index', compact('doctors'));
     }
+
+    public function show(Doctors $doctor)
+    {
+        return view('doctors.show', compact('doctor'));
+    }
 }
