@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Route::get('/patients', 'PatientController@index');
 
+Route::get('/doctors', 'DoctorsController@index');
+
 Route::get('/patients/{patient}', 'PatientController@show');
+
+/*
+ * TODO add routes, controllers and migrations for Doctors and Records
+ */
