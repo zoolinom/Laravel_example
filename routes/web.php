@@ -21,8 +21,12 @@ Route::get('/doctors', 'DoctorsController@index');
 
 Route::get('/records', 'RecordsController@index');
 
+Route::get('/patients/create', 'PatientController@create');
+
 Route::get('/patients/{patient}', 'PatientController@show');
 
 Route::get('/doctors/{doctor}', 'DoctorsController@show');
 
 Route::get('/records/{record}', 'RecordsController@show');
+
+Route::post('/patients', 'PatientController@store');
