@@ -8,6 +8,6 @@ class Doctors extends Model
 {
     public function records()
     {
-        return $this->hasMany(Records::class, 'pat_id');
+        return $this->hasMany(Records::class, 'doc_id');
     }
 }

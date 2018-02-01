@@ -35,13 +35,13 @@
 
                 <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->record_type }}</a></td>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->patients[0]->pat_name }}</a></td>
+                <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_name }}</a></td>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->patients[0]->pat_surname }}</a></td>
+                <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_surname }}</a></td>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->doctors[0]->doc_name }}</a></td>
+                <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_name }}</a></td>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->doctors[0]->doc_surname }}</a></td>
+                <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_surname }}</a></td>
 
             </tr>
         @endforeach
