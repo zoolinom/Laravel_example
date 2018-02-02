@@ -12,7 +12,6 @@
 */
 
 /*
- * TODO Add doctors and records to database
  * TODO Add to view records when click on patient
  * TODO Add buttons for adding/changing/deleting of patients, doctors, records
  * TODO Add authentication
