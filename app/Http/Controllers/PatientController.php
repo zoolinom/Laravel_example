@@ -31,7 +31,7 @@ class PatientController extends Controller
         $this->validate(request(), [
             'pat_name' => 'required',
             'pat_surname' => 'required',
-            'jmbg' => 'required|size:13'
+            'jmbg' => 'required|digits:13|unique:patients'
         ]);
 
         $patient = new Patient(request(['pat_name', 'pat_surname', 'jmbg']));
@@ -39,6 +39,8 @@ class PatientController extends Controller
         $patient->timestamps = false;
 
         $patient->save();
+
+        session()->flash('message', 'Patient successfully added');
 
         return redirect('/patients');
     }

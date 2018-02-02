@@ -11,6 +11,14 @@
 |
 */
 
+/*
+ * TODO Add doctors and records to database
+ * TODO Add authentication
+ * TODO Add to view records when click on patient
+ * TODO Add buttons for adding/changing/deleting of patients, doctors, records
+ * TODO Add About page
+ */
+
 Route::get('/', function () {
     return view('index');
 });
