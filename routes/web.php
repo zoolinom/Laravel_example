@@ -13,10 +13,12 @@
 
 /*
  * TODO Add doctors and records to database
- * TODO Add authentication
  * TODO Add to view records when click on patient
  * TODO Add buttons for adding/changing/deleting of patients, doctors, records
+ * TODO Add authentication
+ * TODO Add factory for database seeding
  * TODO Add About page
+ * TODO Add some tests
  */
 
 Route::get('/', function () {
@@ -31,6 +33,8 @@ Route::get('/records', 'RecordsController@index');
 
 Route::get('/patients/create', 'PatientController@create');
 
+Route::get('/doctors/create', 'DoctorsController@create');
+
 Route::get('/patients/{patient}', 'PatientController@show');
 
 Route::get('/doctors/{doctor}', 'DoctorsController@show');
@@ -38,3 +42,5 @@ Route::get('/doctors/{doctor}', 'DoctorsController@show');
 Route::get('/records/{record}', 'RecordsController@show');
 
 Route::post('/patients', 'PatientController@store');
+
+Route::post('/doctors', 'DoctorsController@store');

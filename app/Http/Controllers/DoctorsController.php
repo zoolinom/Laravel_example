@@ -18,4 +18,27 @@ class DoctorsController extends Controller
     {
         return view('doctors.show', compact('doctor'));
     }
+
+    public function create()
+    {
+        return view('doctors.create');
+    }
+
+    public function store()
+    {
+        $this->validate(request(), [
+            'doc_name' => 'required',
+            'doc_surname' => 'required'
+        ]);
+
+        $doctor = new Doctors(request(['doc_name', 'doc_surname']));
+
+        $doctor->timestamps = false;
+
+        $doctor->save();
+
+        session()->flash('message', 'Doctor successfully added');
+
+        return redirect('/doctors');
+    }
 }
