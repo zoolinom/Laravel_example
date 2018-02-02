@@ -35,6 +35,8 @@ Route::get('/patients/create', 'PatientController@create');
 
 Route::get('/doctors/create', 'DoctorsController@create');
 
+Route::get('/records/create', 'RecordsController@create');
+
 Route::get('/patients/{patient}', 'PatientController@show');
 
 Route::get('/doctors/{doctor}', 'DoctorsController@show');
@@ -44,3 +46,5 @@ Route::get('/records/{record}', 'RecordsController@show');
 Route::post('/patients', 'PatientController@store');
 
 Route::post('/doctors', 'DoctorsController@store');
+
+Route::post('/records', 'RecordsController@store');
