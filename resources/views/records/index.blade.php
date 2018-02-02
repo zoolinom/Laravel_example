@@ -50,4 +50,6 @@
 
     </table>
 
+    @include('layouts.button', ['page' => 'records'])
+
 @endsection

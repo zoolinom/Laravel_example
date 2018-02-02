@@ -34,4 +34,6 @@
 
     </table>
 
+    @include('layouts.button', ['page' => 'doctors'])
+
 @endsection

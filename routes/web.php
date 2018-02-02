@@ -12,8 +12,7 @@
 */
 
 /*
- * TODO Add to view records when click on patient
- * TODO Add buttons for adding/changing/deleting of patients, doctors, records
+ * TODO Add buttons for changing/deleting of patients, doctors, records
  * TODO Add authentication
  * TODO Add factory for database seeding
  * TODO Add About page
