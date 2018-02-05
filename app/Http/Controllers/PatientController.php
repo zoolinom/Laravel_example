@@ -9,7 +9,7 @@ class PatientController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        //$this->middleware('auth')->except('index');
     }
 
     public function index()
@@ -44,6 +44,28 @@ class PatientController extends Controller
         $patient->save();
 
         session()->flash('message', 'Patient successfully added');
+
+        return redirect('/patients');
+    }
+
+    public function edit(Patient $patient)
+    {
+        return view('patients.edit', compact('patient'));
+    }
+
+    public function update(Patient $patient)
+    {
+        $this->validate(request(), [
+            'pat_name' => 'required',
+            'pat_surname' => 'required',
+            'jmbg' => 'required|digits:13'
+        ]);
+
+        $patient->pat_name = request('pat_name');
+        $patient->pat_surname = request('pat_surname');
+        $patient->JMBG = request('jmbg');
+
+        $patient->save();
 
         return redirect('/patients');
     }

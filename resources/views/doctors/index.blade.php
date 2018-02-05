@@ -34,6 +34,6 @@
 
     </table>
 
-    @include('layouts.button', ['page' => 'doctors'])
+    @include('layouts.button', ['action' => 'doctors/create', 'btn_name' => 'Create'])
 
 @endsection

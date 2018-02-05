@@ -13,7 +13,6 @@
 
 /*
  * TODO Add buttons for changing/deleting of patients, doctors, records
- * TODO Add authentication
  * TODO Add factory for database seeding
  * TODO Add About page
  * TODO Add some tests
@@ -23,24 +22,46 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+/*
+ * Index
+ */
 Route::get('/patients', 'PatientController@index');
 
 Route::get('/doctors', 'DoctorsController@index');
 
 Route::get('/records', 'RecordsController@index');
 
+/*
+ * Create
+ */
 Route::get('/patients/create', 'PatientController@create');
 
 Route::get('/doctors/create', 'DoctorsController@create');
 
 Route::get('/records/create', 'RecordsController@create');
 
+/*
+ * Show
+ */
 Route::get('/patients/{patient}', 'PatientController@show');
 
 Route::get('/doctors/{doctor}', 'DoctorsController@show');
 
 Route::get('/records/{record}', 'RecordsController@show');
 
+/*
+ * Edit
+ */
+Route::get('/patients/{patient}/edit', 'PatientController@edit');
+
+/*
+ * Put
+ */
+Route::put('/patients/{patient}', 'PatientController@update');
+
+/*
+ * Store
+ */
 Route::post('/patients', 'PatientController@store');
 
 Route::post('/doctors', 'DoctorsController@store');

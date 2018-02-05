@@ -50,6 +50,6 @@
 
     </table>
 
-    @include('layouts.button', ['page' => 'records'])
+    @include('layouts.button', ['action' => 'records/create', 'btn_name' => 'Create'])
 
 @endsection
