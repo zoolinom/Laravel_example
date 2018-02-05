@@ -21,7 +21,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/patients', 'PatientController@index');
 
@@ -46,3 +46,19 @@ Route::post('/patients', 'PatientController@store');
 Route::post('/doctors', 'DoctorsController@store');
 
 Route::post('/records', 'RecordsController@store');
+
+/*
+ * Login logout routes
+ */
+Route::get('/login', 'SessionsControler@create');
+
+Route::post('/login', 'SessionsControler@store');
+
+Route::get('/logout', 'SessionsControler@destroy');
+
+/*
+ * Register routes
+ */
+Route::get('/register', 'RegistrationControler@create');
+
+Route::post('/register', 'RegistrationControler@store');

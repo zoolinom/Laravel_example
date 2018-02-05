@@ -36,8 +36,6 @@ class PatientController extends Controller
 
         $patient = new Patient(request(['pat_name', 'pat_surname', 'jmbg']));
 
-        $patient->timestamps = false;
-
         $patient->save();
 
         session()->flash('message', 'Patient successfully added');

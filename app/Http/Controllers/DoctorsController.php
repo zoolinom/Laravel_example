@@ -33,8 +33,6 @@ class DoctorsController extends Controller
 
         $doctor = new Doctors(request(['doc_name', 'doc_surname']));
 
-        $doctor->timestamps = false;
-
         $doctor->save();
 
         session()->flash('message', 'Doctor successfully added');
