@@ -50,7 +50,7 @@ Route::post('/records', 'RecordsController@store');
 /*
  * Login logout routes
  */
-Route::get('/login', 'SessionsControler@create');
+Route::get('/login', 'SessionsControler@create')->name('login');
 
 Route::post('/login', 'SessionsControler@store');
 

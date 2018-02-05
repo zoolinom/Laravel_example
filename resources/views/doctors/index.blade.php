@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Patients Table</h2>
+    <h2>Doctors Table</h2>
 
     <table class="table table-bordered">
 
