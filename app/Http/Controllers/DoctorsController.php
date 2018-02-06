@@ -44,4 +44,26 @@ class DoctorsController extends Controller
 
         return redirect('/doctors');
     }
+
+    public function edit(Doctors $doctor)
+    {
+        return view('doctors.edit', compact('doctor'));
+    }
+
+    public function update(Doctors $doctor)
+    {
+        $this->validate(request(), [
+            'doc_name' => 'required',
+            'doc_surname' => 'required'
+        ]);
+
+        $doctor->doc_name = request('doc_name');
+        $doctor->doc_surname = request('doc_surname');
+
+        $doctor->save();
+
+        session()->flash('message', 'Doctor is successfully updated');
+
+        return redirect('/doctors');
+    }
 }

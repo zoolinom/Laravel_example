@@ -9,7 +9,7 @@ class PatientController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index');
     }
 
     public function index()
@@ -66,6 +66,8 @@ class PatientController extends Controller
         $patient->JMBG = request('jmbg');
 
         $patient->save();
+
+        session()->flash('message', 'Patient is successfully updated');
 
         return redirect('/patients');
     }

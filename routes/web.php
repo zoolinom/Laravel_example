@@ -54,10 +54,14 @@ Route::get('/records/{record}', 'RecordsController@show');
  */
 Route::get('/patients/{patient}/edit', 'PatientController@edit');
 
+Route::get('/doctors/{doctor}/edit', 'DoctorsController@edit');
+
 /*
  * Put
  */
 Route::put('/patients/{patient}', 'PatientController@update');
+
+Route::put('/doctors/{doctor}', 'DoctorsController@update');
 
 /*
  * Store

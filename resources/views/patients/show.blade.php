@@ -10,7 +10,6 @@
             <h3>Patient surname: {{ $patient->pat_surname }}</h3>
             <h3>Patient JMBG: {{ $patient->JMBG }}</h3>
 
-            {{--"patients/"{{ $patient->id }}"/edit"--}}
             @include('layouts.button', ['action' => "patients/$patient->id/edit", 'btn_name' => 'Edit patient'])
 
         </div>

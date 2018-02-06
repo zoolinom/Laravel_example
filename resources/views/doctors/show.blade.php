@@ -8,6 +8,8 @@
             <hr>
             <h3>Doctor name: {{ $doctor->doc_name }}</h3>
             <h3>Doctor surname: {{ $doctor->doc_surname }}</h3>
+
+            @include('layouts.button', ['action' => "doctors/$doctor->id/edit", 'btn_name' => 'Edit doctor'])
         </div>
 
         <div class="col-lg-6">
