@@ -11,6 +11,7 @@
             <h3>Patient JMBG: {{ $patient->JMBG }}</h3>
 
             @include('layouts.button', ['action' => "patients/$patient->id/edit", 'btn_name' => 'Edit patient'])
+            @include('layouts.button', ['action' => "patients/$patient->id", 'btn_name' => 'Delete patient', 'delete' => 'yes'])
 
         </div>
         <div class="col-lg-6">

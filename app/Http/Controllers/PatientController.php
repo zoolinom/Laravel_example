@@ -71,4 +71,17 @@ class PatientController extends Controller
 
         return redirect('/patients');
     }
+
+    public function destroy(Patient $patient)
+    {
+        //dd('delete');
+
+        $patient->records()->delete();
+
+        $patient->delete();
+
+        session()->flash('message', 'Patient is successfully deleted');
+
+        return redirect('/patients');
+    }
 }
