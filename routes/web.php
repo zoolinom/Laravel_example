@@ -56,12 +56,16 @@ Route::get('/patients/{patient}/edit', 'PatientController@edit');
 
 Route::get('/doctors/{doctor}/edit', 'DoctorsController@edit');
 
+Route::get('/records/{record}/edit', 'RecordsController@edit');
+
 /*
  * Put
  */
 Route::put('/patients/{patient}', 'PatientController@update');
 
 Route::put('/doctors/{doctor}', 'DoctorsController@update');
+
+Route::put('/records/{record}', 'RecordsController@update');
 
 /*
  * Store

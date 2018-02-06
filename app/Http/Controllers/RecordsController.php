@@ -56,4 +56,31 @@ class RecordsController extends Controller
 
         return redirect('/records');
     }
+
+    public function edit(Records $record)
+    {
+        $patients = Patient::all();
+        $doctors = Doctors::all();
+
+        return view('records.edit', compact('record', 'patients', 'doctors'));
+    }
+
+    public function update(Records $record)
+    {
+        $this->validate(request(), [
+            'record_type' => 'required',
+            'pat_id' => 'required',
+            'doc_id' => 'required'
+        ]);
+
+        $record->record_type = request('record_type');
+        $record->pat_id = request('pat_id');
+        $record->doc_id = request('doc_id');
+        
+        $record->save();
+
+        session()->flash('message', 'Record is successfully updated');
+
+        return redirect('/records');
+    }
 }
