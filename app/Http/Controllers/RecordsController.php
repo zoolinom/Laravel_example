@@ -76,7 +76,7 @@ class RecordsController extends Controller
         $record->record_type = request('record_type');
         $record->pat_id = request('pat_id');
         $record->doc_id = request('doc_id');
-        
+
         $record->save();
 
         session()->flash('message', 'Record is successfully updated');
