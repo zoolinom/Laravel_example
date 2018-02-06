@@ -10,5 +10,6 @@
     <h3>Doctor: {{ $record->doctors[0]->doc_name }}, {{ $record->doctors[0]->doc_surname }}</h3>
 
     @include('layouts.button', ['action' => "records/$record->id/edit", 'btn_name' => 'Edit record'])
+    @include('layouts.button', ['action' => "records/$record->id", 'btn_name' => 'Delete record', 'delete' => 'yes'])
 
 @endsection

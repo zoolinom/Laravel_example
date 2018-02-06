@@ -10,6 +10,7 @@
             <h3>Doctor surname: {{ $doctor->doc_surname }}</h3>
 
             @include('layouts.button', ['action' => "doctors/$doctor->id/edit", 'btn_name' => 'Edit doctor'])
+            @include('layouts.button', ['action' => "doctors/$doctor->id", 'btn_name' => 'Delete doctor', 'delete' => 'yes'])
         </div>
 
         <div class="col-lg-6">

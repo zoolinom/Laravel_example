@@ -66,4 +66,15 @@ class DoctorsController extends Controller
 
         return redirect('/doctors');
     }
+
+    public function destroy(Doctors $doctor)
+    {
+        $doctor->records()->delete();
+
+        $doctor->delete();
+
+        session()->flash('message', 'Doctor is successfully deleted');
+
+        return redirect('/doctors');
+    }
 }

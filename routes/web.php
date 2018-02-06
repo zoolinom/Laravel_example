@@ -81,6 +81,10 @@ Route::post('/records', 'RecordsController@store');
  */
 Route::delete('/patients/{patient}', 'PatientController@destroy');
 
+Route::delete('/doctors/{doctor}', 'DoctorsController@destroy');
+
+Route::delete('/records/{record}', 'RecordsController@destroy');
+
 /*
  * Login logout routes
  */

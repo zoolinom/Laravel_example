@@ -83,4 +83,13 @@ class RecordsController extends Controller
 
         return redirect('/records');
     }
+
+    public function destroy(Records $record)
+    {
+        $record->delete();
+
+        session()->flash('message', 'Record is successfully deleted');
+
+        return redirect('/records');
+    }
 }
