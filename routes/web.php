@@ -12,8 +12,6 @@
 */
 
 /*
- * TODO Add buttons for changing/deleting of patients, doctors, records
- * TODO Add factory for database seeding
  * TODO Add About page
  * TODO Add some tests
  */
