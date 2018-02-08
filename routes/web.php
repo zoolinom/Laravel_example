@@ -12,13 +12,19 @@
 */
 
 /*
- * TODO Add About page
+ * TODO Add mails
+ * TODO Add timestamp for record
+ * TODO Add sidebar (months)
  * TODO Add some tests
  */
 
 Route::get('/', function () {
     return view('index');
 })->name('home');
+
+Route::get('/about', function () {
+    return view('about');
+});
 
 /*
  * Index

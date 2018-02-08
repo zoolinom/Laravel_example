@@ -10,6 +10,8 @@
             <h2><a href="/doctors">Doctors</a></h2>
 
             <h2><a href="/records">Records</a></h2>
+
+            <h2><a href="/about">About</a></h2>
         </div>
 
     </div>

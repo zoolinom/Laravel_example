@@ -5,7 +5,7 @@
             <a class="nav-link" href="/patients">Patients</a>
             <a class="nav-link" href="/doctors">Doctors</a>
             <a class="nav-link" href="/records">Records</a>
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/about">About</a>
 
             @if(Auth::check())
                 <a class="nav-link ml-auto" href="#">{{ Auth::user()->name }}</a>
