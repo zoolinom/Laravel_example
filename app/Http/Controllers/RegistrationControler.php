@@ -26,7 +26,9 @@ class RegistrationControler extends Controller
 
         auth()->login($user);
 
-        \Mail::to($user)->send(new Welcome($user));
+        \Mail::to($user)->queue(new Welcome($user));
+        //$when = now()->addMinutes(1);
+        //\Mail::to($user)->later($when, new Welcome($user));
 
         return redirect()->home();
     }
