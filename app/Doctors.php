@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Doctors extends CustomModel
+use Illuminate\Database\Eloquent\Model;
+
+class Doctors extends Model
 {
 
     protected $fillable = ['doc_name', 'doc_surname'];

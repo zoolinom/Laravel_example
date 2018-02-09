@@ -2,42 +2,46 @@
 
 @section('content')
 
-    <h2>Patients Table</h2>
+    <div class="col-lg-8">
 
-    <table class="table table-bordered">
+        <h2>Patients Table</h2>
 
-        <thead>
+        <table class="table table-bordered">
 
-            <tr>
+            <thead>
 
-                <th class="col-lg-4">Patient name</th>
-
-                <th class="col-lg-4">Patient surname</th>
-
-                <th class="col-lg-4">JMBG</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach($patients as $patient)
                 <tr>
 
-                    <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->pat_name }}</a></td>
+                    <th class="col-lg-4">Patient name</th>
 
-                    <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->pat_surname }}</a></td>
+                    <th class="col-lg-4">Patient surname</th>
 
-                    <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->JMBG }}</a></td>
+                    <th class="col-lg-4">JMBG</th>
 
                 </tr>
-            @endforeach
 
-        </tbody>
+            </thead>
 
-    </table>
+            <tbody>
 
-    @include('layouts.button', ['action' => 'patients/create', 'btn_name' => 'Create'])
+                @foreach($patients as $patient)
+                    <tr>
+
+                        <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->pat_name }}</a></td>
+
+                        <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->pat_surname }}</a></td>
+
+                        <td class="col-lg-4"><a href="patients/{{ $patient->id }}">{{ $patient->JMBG }}</a></td>
+
+                    </tr>
+                @endforeach
+
+            </tbody>
+
+        </table>
+
+        @include('layouts.button', ['action' => 'patients/create', 'btn_name' => 'Create'])
+
+    </div>
 
 @endsection

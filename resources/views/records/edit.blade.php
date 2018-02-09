@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-lg-12">
+    <div class="col-lg-8">
 
         <h1>Update record</h1>
 

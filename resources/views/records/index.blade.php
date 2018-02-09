@@ -2,54 +2,58 @@
 
 @section('content')
 
-    <h2>Records Table</h2>
+    <div class="col-lg-8">
 
-    <table class="table table-bordered">
+        <h2>Records Table</h2>
 
-        <thead>
+        <table class="table table-bordered">
 
-        <tr>
+            <thead>
 
-            <th class="col-lg-2">Record #</th>
-
-            <th class="col-lg-2">Record type</th>
-
-            <th class="col-lg-2">Patient name</th>
-
-            <th class="col-lg-2">Patient surname</th>
-
-            <th class="col-lg-2">Doctor name</th>
-
-            <th class="col-lg-2">Doctor surname</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-        @foreach($records as $record)
             <tr>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->id }}</a></td>
+                <th class="col-lg-1">Record #</th>
 
-                <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->record_type }}</a></td>
+                <th class="col-lg-2">Record type</th>
 
-                <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_name }}</a></td>
+                <th class="col-lg-2">Patient name</th>
 
-                <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_surname }}</a></td>
+                <th class="col-lg-2">Patient surname</th>
 
-                <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_name }}</a></td>
+                <th class="col-lg-2">Doctor name</th>
 
-                <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_surname }}</a></td>
+                <th class="col-lg-2">Doctor surname</th>
 
             </tr>
-        @endforeach
 
-        </tbody>
+            </thead>
 
-    </table>
+            <tbody>
 
-    @include('layouts.button', ['action' => 'records/create', 'btn_name' => 'Create'])
+            @foreach($records as $record)
+                <tr>
+
+                    <td class="col-lg-1"><a href="records/{{ $record->id }}">{{ $record->id }}</a></td>
+
+                    <td class="col-lg-2"><a href="records/{{ $record->id }}">{{ $record->record_type }}</a></td>
+
+                    <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_name }}</a></td>
+
+                    <td class="col-lg-2"><a href="patients/{{ $record->patients[0]->id }}">{{ $record->patients[0]->pat_surname }}</a></td>
+
+                    <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_name }}</a></td>
+
+                    <td class="col-lg-2"><a href="doctors/{{ $record->doctors[0]->id }}">{{ $record->doctors[0]->doc_surname }}</a></td>
+
+                </tr>
+            @endforeach
+
+            </tbody>
+
+        </table>
+
+        @include('layouts.button', ['action' => 'records/create', 'btn_name' => 'Create'])
+
+    </div>
 
 @endsection

@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Patient extends CustomModel
+use Illuminate\Database\Eloquent\Model;
+
+class Patient extends Model
 {
     //added for mass assignable
     protected $fillable = ['pat_name', 'pat_surname', 'jmbg'];

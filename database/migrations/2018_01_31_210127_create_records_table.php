@@ -20,6 +20,7 @@ class CreateRecordsTable extends Migration
             $table->integer('doc_id')->unsigned();
             $table->foreign('pat_id')->references('id')->on('patients');
             $table->foreign('doc_id')->references('id')->on('doctors');
+            $table->timestamps();
         });
     }
 

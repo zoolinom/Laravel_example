@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Records extends CustomModel
+use Illuminate\Database\Eloquent\Model;
+
+class Records extends Model
 {
 
     protected $fillable = ['record_type', 'pat_id', 'doc_id'];

@@ -12,8 +12,6 @@
 */
 
 /*
- * TODO Add mails
- * TODO Add timestamp for record
  * TODO Add sidebar (months)
  * TODO Add some tests
  */

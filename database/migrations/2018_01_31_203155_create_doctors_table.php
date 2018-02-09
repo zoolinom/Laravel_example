@@ -17,6 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->increments('id');
             $table->string('doc_name');
             $table->string('doc_surname');
+            $table->timestamps();
         });
     }
 

@@ -2,38 +2,42 @@
 
 @section('content')
 
-    <h2>Doctors Table</h2>
+    <div class="col-lg-8">
 
-    <table class="table table-bordered">
+        <h2>Doctors Table</h2>
 
-        <thead>
+        <table class="table table-bordered">
 
-        <tr>
+            <thead>
 
-            <th class="col-lg-4">Doctor name</th>
-
-            <th class="col-lg-4">Doctor surname</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-        @foreach($doctors as $doctor)
             <tr>
 
-                <td class="col-lg-8"><a href="doctors/{{ $doctor->id }}">{{ $doctor->doc_name }}</a></td>
+                <th class="col-lg-4">Doctor name</th>
 
-                <td class="col-lg-8"><a href="doctors/{{ $doctor->id }}">{{ $doctor->doc_surname }}</a></td>
+                <th class="col-lg-4">Doctor surname</th>
 
             </tr>
-        @endforeach
 
-        </tbody>
+            </thead>
 
-    </table>
+            <tbody>
 
-    @include('layouts.button', ['action' => 'doctors/create', 'btn_name' => 'Create'])
+            @foreach($doctors as $doctor)
+                <tr>
+
+                    <td class="col-lg-8"><a href="doctors/{{ $doctor->id }}">{{ $doctor->doc_name }}</a></td>
+
+                    <td class="col-lg-8"><a href="doctors/{{ $doctor->id }}">{{ $doctor->doc_surname }}</a></td>
+
+                </tr>
+            @endforeach
+
+            </tbody>
+
+        </table>
+
+        @include('layouts.button', ['action' => 'doctors/create', 'btn_name' => 'Create'])
+
+    </div>
 
 @endsection
