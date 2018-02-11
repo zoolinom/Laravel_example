@@ -4,6 +4,11 @@
 
     <div class="col-lg-8">
 
+        @if(count($records))
+            <h2>Number of records: {{ count($records) }}</h2>
+            <hr>
+        @endif
+
         <h2>Records Table</h2>
 
         <table class="table table-bordered">
