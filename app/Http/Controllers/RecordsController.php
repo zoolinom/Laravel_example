@@ -16,7 +16,8 @@ class RecordsController extends Controller
 
     public function index()
     {
-        $records = Records::all();
+        $records = Records::filter(request(['month', 'year']))
+            ->get();
         //$patient_id = Records::select('pat_id')->get();
         //dd($patient_id[0]);
         //$patient = Patient::select('pat_name', 'pat_surname')->where('id', $patient_id)->first();

@@ -27,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
          */
 
         Schema::defaultStringLength(191);
+
+        view()->composer('layouts.sidebar', function($view)
+        {
+            $view->with('archives', \App\Records::archives());
+        });
     }
 
     /**
