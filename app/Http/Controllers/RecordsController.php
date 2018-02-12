@@ -44,10 +44,16 @@ class RecordsController extends Controller
     public function store()
     {
         $this->validate(request(), [
-           'record_type' => 'required',
+            'record_type' => 'required',
             'pat_id' => 'required',
-            'doc_id' => 'required'
-        ]);
+            'doc_id' => 'required'],
+            ['required' => 'The :attribute can not be empty'],
+            [
+                'record_type' => 'type of record',
+                'pat_id' => 'patient',
+                'doc_id' => 'doctor'
+
+            ]);
 
         $record = new Records(request(['record_type', 'pat_id', 'doc_id']));
 
@@ -71,8 +77,14 @@ class RecordsController extends Controller
         $this->validate(request(), [
             'record_type' => 'required',
             'pat_id' => 'required',
-            'doc_id' => 'required'
-        ]);
+            'doc_id' => 'required'],
+            ['required' => 'The :attribute can not be empty'],
+            [
+                'record_type' => 'type of record',
+                'pat_id' => 'patient',
+                'doc_id' => 'doctor'
+
+            ]);
 
         $record->record_type = request('record_type');
         $record->pat_id = request('pat_id');

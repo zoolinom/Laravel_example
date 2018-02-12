@@ -36,8 +36,17 @@ class PatientController extends Controller
         $this->validate(request(), [
             'pat_name' => 'required',
             'pat_surname' => 'required',
-            'jmbg' => 'required|digits:13|unique:patients'
-        ]);
+            'jmbg' => 'required|digits:13|unique:patients'],
+            [
+                'required' => 'The :attribute can not be empty',
+                'unique' => 'This :attribute already exists'
+            ],
+            [
+                'pat_name' => 'patient name',
+                'pat_surname' => 'patient surname',
+                'jmbg' => 'JMBG'
+            ]
+        );
 
         $patient = new Patient(request(['pat_name', 'pat_surname', 'jmbg']));
 
@@ -58,8 +67,17 @@ class PatientController extends Controller
         $this->validate(request(), [
             'pat_name' => 'required',
             'pat_surname' => 'required',
-            'jmbg' => 'required|digits:13'
-        ]);
+            'jmbg' => 'required|digits:13'],
+            [
+                'required' => 'The :attribute can not be empty',
+                'unique' => 'This :attribute already exists'
+            ],
+            [
+                'pat_name' => 'patient name',
+                'pat_surname' => 'patient surname',
+                'jmbg' => 'JMBG'
+            ]
+        );
 
         $patient->pat_name = request('pat_name');
         $patient->pat_surname = request('pat_surname');

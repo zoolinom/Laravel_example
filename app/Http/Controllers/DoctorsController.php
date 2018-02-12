@@ -33,8 +33,12 @@ class DoctorsController extends Controller
     {
         $this->validate(request(), [
             'doc_name' => 'required',
-            'doc_surname' => 'required'
-        ]);
+            'doc_surname' => 'required'],
+            ['required' => 'The :attribute can not be empty'],
+            [
+                'doc_name' => 'name of doctor',
+                'doc_surname' => 'doctor surname'
+            ]);
 
         $doctor = new Doctors(request(['doc_name', 'doc_surname']));
 
@@ -54,8 +58,12 @@ class DoctorsController extends Controller
     {
         $this->validate(request(), [
             'doc_name' => 'required',
-            'doc_surname' => 'required'
-        ]);
+            'doc_surname' => 'required'],
+            ['required' => 'The :attribute can not be empty'],
+            [
+                'doc_name' => 'name of doctor',
+                'doc_surname' => 'doctor surname'
+            ]);
 
         $doctor->doc_name = request('doc_name');
         $doctor->doc_surname = request('doc_surname');
